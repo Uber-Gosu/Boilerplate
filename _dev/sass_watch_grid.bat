@@ -1,0 +1,1 @@
+sass --watch scss/grid/grid.scss:../css/grid.min.css --style compressed
