@@ -1,21 +1,22 @@
-/* IMPORTS
-**************************************************/
-@import "includes/normalize";
-@import "includes/normalize_custom";
+@import "../site_settings";
+
+
+@import "libs/normalize";
+@import "libs/fancybox";
+@import "libs/royalslider";
+@import "libs/owl";
+
+
 @import "includes/mixins";
 @import "includes/helpers";
+@import "includes/typography";
+@import "includes/iconset";
+@import "includes/layout";
 
 
-/* PLUGINS
-**************************************************/
-@import "plugins/font_awesome/font-awesome";
-@import "plugins/royalslider";
-
-
-/* MODULES & LAYOUT
-**************************************************/
 @import "modules/header";
-
-
+@import "modules/table";
+@import "modules/content";
+@import "modules/footer";
 
 

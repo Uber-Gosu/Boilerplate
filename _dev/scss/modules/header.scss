@@ -1,4 +1,21 @@
+$m: header;
 
-h1 {
-	@include font-size(24);
+.#{$m} {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: block;
+	height: $header;
+	background: rgba(0,0,0, 0.3);
+	@include cf();
+	clear: both;
+
+    &__test {
+
+        .#{$m}--01 & {
+
+        }
+    }
+
 }

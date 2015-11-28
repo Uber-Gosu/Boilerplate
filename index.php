@@ -10,15 +10,11 @@
     <body>
         <!--[if lt IE 9]><p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]-->
 
+        <?php @include('inc/content.php') ?>
+
         <?php @include('inc/header.php') ?>
 
-        <main>
-            <div class="container">
-                <div class="grid-12 center">
-                    <h1>This is main area</h1>
-                </div>
-            </div>            
-        </main>
+        <?php @include('inc/table.php') ?>
 
         <?php @include('inc/footer.php') ?>
 

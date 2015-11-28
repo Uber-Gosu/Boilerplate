@@ -1,19 +1,43 @@
-// Import gridle :
+@import '../site_settings';
 @import 'gridle/gridle';
 
 // setup the grid (required) :
 @include gridle_setup((
-	context : 12,
-	gutter-width : 20px,
+	context : $grid,
+	gutter-width : $gutter,
 	debug : false
 ));
 
+@include gridle_register_state( xs, (
+    max-width : $xs
+) );
+@include gridle_register_state( sm , (
+    min-width : $sm
+) );
+@include gridle_register_state( md, (
+    min-width : $md
+) );
+@include gridle_register_state( lg, (
+    min-width : $lg
+) );
+@include gridle_register_state( xlg, (
+    min-width : $xlg
+) );
+
 // register special columns :
-@include gridle_register_column("1on5", 1, 5);
+//@include gridle_register_column("1on5", 1, 5);
 
 // clear each classes :
-@include gridle_register_clear_each(2, left);
-@include gridle_register_clear_each(12, both);
+//@include gridle_register_clear_each(2, left);
+//@include gridle_register_clear_each(12, both);
 
 // register states :
-@include gridle_register_default_states();
+//@include gridle_register_default_states();
+
+// Max size :
+.container {
+	margin: 0 auto;
+	max-width: $container-width;
+}
+
+

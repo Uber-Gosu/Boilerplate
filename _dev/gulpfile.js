@@ -22,13 +22,12 @@ var gulp = require('gulp'),
 **************************************************/
 gulp.task('js', function() {
     return gulp.src([
-        'js/plugins/console_fix.js',
-        'js/plugins/jquery.easing-1.3.js',
-        'js/plugins/selectivizr-min.js',
-        'js/plugins/*.js',
+        'js/libs/console_fix.js',
+        'js/libs/jquery.easing-1.3.js',
+        'js/libs/selectivizr-min.js',
+        //'js/libs/*.js',
         'js/modules/*.js',
         'js/scripts.js',
-        'js/*.js',
         ])
         .pipe(sourcemaps.init())
         .pipe(concat('scripts.js'))
@@ -45,10 +44,11 @@ gulp.task('scss', function() {
     return gulp.src('scss/styles.scss')
         .on('data', processWinPath)
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed', errLogToConsole: true}))
+        .pipe(sass({outputStyle: 'compact'}).on('error', sass.logError))
         .pipe(rename('styles.min.css'))
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('../css'));
+        //.pipe(sourcemaps.write('.', {includeContent: false, sourceRoot: '../css'}))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('../css'));      
 });
 
 /* watcher & live reload
